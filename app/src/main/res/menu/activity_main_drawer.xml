@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/nav_home"/>
+        <item
+            android:id="@+id/nav_na"
+            android:icon="@drawable/menu"
+            android:title="@string/nav_na" />
+        <item
+            android:id="@+id/nav_kn"
+            android:icon="@drawable/menu_unicon"
+            android:title="@string/nav_kn" />
+        <item
+            android:id="@+id/nav_sm"
+            android:icon="@drawable/menu_unicon"
+            android:title="@string/nav_sm" />
+        <item
+            android:id="@+id/nav_http"
+            android:icon="@drawable/menu_unicon"
+            android:title="@string/nav_http" />
+        <item
+            android:id="@+id/nav_ma"
+            android:icon="@drawable/menu"
+            android:title="@string/nav_ma" />
+        <item
+            android:id="@+id/nav_lt"
+            android:icon="@drawable/menu_unicon"
+            android:title="@string/nav_lt" />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/menu_unicon"
+            android:title="@string/nav_camera" />
+        <item
+            android:id="@+id/nav_video"
+            android:icon="@drawable/menu_unicon"
+            android:title="@string/nav_video" />
+        <item
+            android:id="@+id/nav_audio"
+            android:icon="@drawable/menu_unicon"
+            android:title="@string/nav_audio" />
+    </group>
+</menu>

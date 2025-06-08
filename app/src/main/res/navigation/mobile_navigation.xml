@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.chuong_7.ui.home.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_kn"
+        android:name="com.example.chuong_7.ui.kn.knFragment"
+        android:label="@string/nav_kn"
+        tools:layout="@layout/fragment_kn" />
+    <fragment
+        android:id="@+id/nav_sm"
+        android:name="com.example.chuong_7.ui.sm.smFragment"
+        android:label="@string/nav_sm"
+        tools:layout="@layout/fragment_sm" />
+    <fragment
+        android:id="@+id/nav_http"
+        android:name="com.example.chuong_7.ui.http.httpFragment"
+        android:label="@string/nav_http"
+        tools:layout="@layout/fragment_http" />
+    <fragment
+        android:id="@+id/nav_lt"
+        android:name="com.example.chuong_7.ui.lt.ltFragment"
+        android:label="@string/nav_lt"
+        tools:layout="@layout/fragment_lt" />
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="com.example.chuong_7.ui.camera.cameraFragment"
+        android:label="@string/nav_camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/nav_video"
+        android:name="com.example.chuong_7.ui.video.videoFragment"
+        android:label="@string/nav_video"
+        tools:layout="@layout/fragment_video" />
+    <fragment
+        android:id="@+id/nav_audio"
+        android:name="com.example.chuong_7.ui.audio.audioFragment"
+        android:label="@string/nav_audio"
+        tools:layout="@layout/fragment_audio" />
+</navigation>

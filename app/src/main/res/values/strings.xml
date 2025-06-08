@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CHUONG_7</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="nav_home">CHƯƠNG 7</string>
+    <string name="nav_na">Networking APIs</string>
+    <string name="nav_kn">Khái niệm Networking trên thiết bị di động</string>
+    <string name="nav_sm">Strict Mode trên Networking</string>
+    <string name="nav_http">Truy xuất Internet (HTTP)</string>
+    <string name="nav_ma">Multimedia APIs</string>
+    <string name="nav_lt">Lập trình với Multimedia APIs</string>
+    <string name="nav_camera">Lập trình với Camera</string>
+    <string name="nav_video">Lập trình với Video</string>
+    <string name="nav_audio">Lập trình với Audio</string>
+</resources>
