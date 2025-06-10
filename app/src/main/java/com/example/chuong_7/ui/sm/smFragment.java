@@ -1,10 +1,10 @@
 package com.example.chuong_7.ui.sm;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,12 +18,21 @@ public class smFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectAll()
+                .penaltyLog()
+                .build());
+
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                .detectAll()
+                .penaltyLog()
+                .build());
+
         smViewModel smViewModel =
                 new ViewModelProvider(this).get(smViewModel.class);
 
         binding = FragmentSmBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
 
         return root;
     }
