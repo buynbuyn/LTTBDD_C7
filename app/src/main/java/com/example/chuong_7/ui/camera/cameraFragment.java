@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.chuong_7.databinding.FragmentCameraBinding;
 import com.example.chuong_7.ui.camera.cameraViewModel;
+import android.content.Intent;
 
 public class cameraFragment extends Fragment {
     private FragmentCameraBinding binding;
@@ -24,7 +25,16 @@ public class cameraFragment extends Fragment {
         binding = FragmentCameraBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        binding.btnCameraapi.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), CameraAPIActivity.class));
+        });
+
+        binding.btnCommunicate.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), CommunicateCameraActivity.class));
+        });
+
         return root;
+
     }
 
     @Override

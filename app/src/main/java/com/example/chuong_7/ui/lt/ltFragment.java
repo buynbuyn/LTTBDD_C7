@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.chuong_7.databinding.FragmentLtBinding;
 import com.example.chuong_7.ui.lt.ltViewModel;
+import android.content.Intent;
 
 public class ltFragment extends Fragment {
     private FragmentLtBinding binding;
@@ -23,6 +24,10 @@ public class ltFragment extends Fragment {
 
         binding = FragmentLtBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        binding.btnLt.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), MultimediaPlayerActivity.class));
+        });
 
         return root;
     }

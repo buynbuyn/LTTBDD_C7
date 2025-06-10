@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.lt.MultimediaPlayerActivity"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lập trình với Multimedia APIs"
+            android:textSize="26sp"
+            android:layout_gravity="center"
+            android:textColor="#F44336"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Multimedia APIs là tập hợp các giao diện lập trình được thiết kế để hỗ trợ việc xử lý, phát, ghi, và quản lý các loại phương tiện đa phương tiện (multimedia) như âm thanh, video, hình ảnh, và văn bản trên các nền tảng phần mềm, đặc biệt là trên thiết bị di động hoặc máy tính."
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trên android, Multimedia APIs bao gồm các thư viện:\n- MediaPlayer\n- VideoView\n- ExoPlayer\n- MediaRecorder"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.MediaPlayer"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#F44336"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ứng dụng chúng ta hầu như sẽ có thể phát một đoạn video, một bài nhạc từ trong bộ nhớ máy, ứng dụng phát trực tiếp lên mạng thì tất cả đều sử dụng MediaPlayer APIs."
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MediaPlayer là một lớp (class) trong Android SDK thuộc gói android.media, được sử dụng để phát các tệp âm thanh (audio) và video từ nhiều nguồn khác nhau như tài nguyên cục bộ (local resources), bộ nhớ thiết bị (file system), hoặc URL trực tuyến (streaming)."
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hỗ trợ các thao tác chơi (play), tạm dừng (pause), dừng (stop), tua (seek) và lặp lại (loop)"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Định dạng của MediaPlayer:\n- Âm thanh: MP3, WAV, AAC\n- Video: MP4, 3GP"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Để sử dụng MediaPlayer, ta cần quyền cấp phát file từ bộ nhớ và phát từ URL thì ta cần INTERNET:"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ví dụ: Chạy bài nhạc có ở trong bộ nhớ máy (local resource)"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phát âm thanh từ bộ nhớ máy"
+            android:id="@+id/btn_mediaPlayer1"/>
+
+        <!-- Nút phát và dừng âm thanh -->
+        <Button
+            android:id="@+id/btn_play_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phát âm thanh"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btn_stop_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dừng âm thanh"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt5"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ta sẽ có các phương thức như:\n- start(): để bắt đầu\n- prepare(): chuẩn bị\n- release(): để giải phóng bộ nhớ"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sử dụng prepare (đồng bộ), nếu file âm thanh lớn hệ thống sẽ bị treo. Đây là ví dụ:"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phát âm thanh từ bộ nhớ máy qua prepare (đồng bộ)"
+            android:id="@+id/btn_mediaPlayer2"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt6"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sử dụng prepare (bất đồng bộ). Đây là ví dụ:"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phát âm thanh từ bộ nhớ máy qua prepare (bất đồng bộ)"
+            android:id="@+id/btn_mediaPlayer3"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt7"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đầu tiên ta sẽ tạo thư mục raw để lưu trữ các file âm thanh mp3:"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt2"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt3"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_height="200dp"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt4"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sử dụng phương thức release để giải phóng bộ nhớ:"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt8"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.VideoView"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#F44336"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VideoView là một widget trong Android SDK thuộc gói android.widget, được sử dụng để phát video một cách đơn giản. Nó tích hợp MediaPlayer bên trong để xử lý phát lại video và cung cấp giao diện người dùng cơ bản."
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nó được sử dụng để phát video từ bộ nhớ thiết bị, tài nguyên cục bộ (raw) hoặc URL trực tuyến, hỗ trợ các thao tác như play, pause, stop. seek, hỗ trợ các định dạng video: MP4, 3GP"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+
+        <!-- Nút phát và dừng video -->
+        <Button
+            android:id="@+id/btn_play_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phát video"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btn_stop_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dừng video"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xml ta khái báo:"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ta ánh xạ với VideoView và dùng phương thức setVideoURI và gán cho nó uri được chuyển đổi"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt10"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. ExoPlayer"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#F44336"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ExoPlayer là một thư viện mã nguồn mở của Google, mạnh mẽ hơn MediaPlayer và VideoView, được thiết kế để phát đa phương tiện với khả năng tùy chỉnh cao."
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- Ưu điểm:\n+ Hỗ trợ Dynamic Adaptive Streaming over HTTP (DASH) và SmoothStreaming, cái mà không được hỗ trợ trong MediaPlayer (nó cũng hỗ trợ HTTP Live Streaming (HLS), FMP4, MP4, M4A, MKV, WebM, MP3, AAC, MPEG-TS, MPEG-PS, OGG, FLV và WAV).\n+ Hỗ trợ các tính năng nâng cấp của HLS, như là xử lý đúng của thẻ #EXT-X-DISCONTINUITY.\n+ Khả năng tùy chỉnh và mở rộng cao. ExoPlayer được thiết kế đặc biệt, cho phép nhiều thành phần được thay thế và tuỳ chỉnh khi thực thi.\n+ Dễ dàng cập nhật.\n+ Các issue liên quan đến device là ít hơn."
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- Nhược điểm:\nExoPlayer được xây dựng dựa trên các component MediaCodec API của Android chuẩn về audio và video, cái mà được phát hành trong Android 4.1 (API level 16). Do đó nó không làm việc trên các version thấp hơn 4.1 của Android."
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/playerView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ta cần khai báo trong build.gradle.kts (Module app)"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xml ta khai báo"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Java xử lý:"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt14"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. MediaRecoder"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#F44336"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MediaRecorder là một lớp trong Android SDK thuộc gói android.media, dùng để ghi âm thanh hoặc video từ thiết bị (micro, camera) được hiểu dưới cụm từ “Quay màn hình”"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đầu tiên ta sẽ xin quyền từ điện thoại:"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quyền WRITE_EXTERNAL_STORAGE dùng để ghi thêm nội dung vào bộ nhớ ngoài của điện thoại và quyền RECORD_AUDIO dùng để xin quyền quay màn hình."
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"/>
+
+        <Button
+            android:id="@+id/btn_start_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quay màn hình"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btn_stop_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dừng quay"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt16"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt17"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"/>
+
+        <ImageView
+            app:srcCompat="@drawable/lt18"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"/>
+
+    </LinearLayout>
+</ScrollView>

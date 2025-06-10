@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
 
     <LinearLayout
         android:orientation="vertical"
@@ -10,81 +11,156 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="📌 1. MediaRecorder (Ghi âm thanh)"
-            android:textStyle="bold"
+            android:text="Để giao tiếp với camera thông qua API, chúng ta sẽ sử dụng Camera API trong android có 3 cách phổ biến:\n
+- Camera1 API là API ban đầu, có từ android API 1 và những API 21 trở đi vẫn dùng được\n
+		+ Ưu điểm:\n
+     ++ Dễ sử dụng, đơn giản cho thao tác cơ bản\n
+     ++ Hỗ trợ tốt trên các thiết bị cũ\n
+  + Nhược điểm:\n
+     ++ Không linh hoạt, thiếu tính năng nâng cao như lấy nét, kiểm soát khung hình,...\n
+     ++ Dễ gây lỗi trên một số thiết bị, vì các máy đời sau này đã khác về phần cứng\n\n
+- Camera2 API: cung cấp quyền kiểm soát chi tiết đối với các thành phần camera như lấy nét thủ công, điều chỉnh ISO, tốc độ màn trập,...\n
+  + Ưu điểm:\n
+     ++ Rất linh hoạt và mạnh mẽ\n
+     ++ Phù hợp với ứng dụng cần chất lượng ảnh hoặc kiểm soát chuyên sâu\n
+		+ Nhược điểm:\n
+     ++ Cấu hình phức tạp, nhiều bước\n\n
+- Tuy nhiên 2 loại của Camera API này lại chỉ áp dụng cho các api 21 trở xuống\n\n\n
+ CameraX: là một thư viện Jetpack của Google, cung cấp API đơn giản hóa để truy cập camera, xử lý hình ảnh, video và tự động điều chỉnh cho các thiết bị khác nhau.\n
+  + Ưu điểm:\n
+     ++ Dễ dùng như Camera1 và mạnh mẽ như camera2\n
+     ++ Hỗ trợ các tính năng nâng cao như chụp, quay video, nhận diện khuôn mặt,...\n
+     ++ Tự động xử lý lifecycle, permission, orientation\n
+		+ Nhược điểm:\n
+     ++ Là thư viện ngoài nên cần thêm các dependency để sử dụng\n\nTrong build.gradle, ta khai báo trong dependency:
+"
             android:textSize="18sp"
+            android:textColor="#000000"
             android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <TextView
-            android:text="• Dùng để ghi âm từ microphone.\n• Các bước:\n   1. Khởi tạo MediaRecorder\n   2. Cấu hình nguồn, định dạng, encoder, output\n   3. Gọi prepare() và start()\n   4. Gọi stop() và release()"
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/cm1"/>
 
         <TextView
-            android:text="📌 2. MediaPlayer (Phát âm thanh)"
-            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"
+            android:textColor="#000000"
+            android:text="Và thay đổi một xíu về compileOptions:"/>
+
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/cm2"/>
 
         <TextView
-            android:text="• Dùng để phát âm thanh từ file hoặc URL.\n• Các bước:\n   1. Khởi tạo MediaPlayer\n   2. Gọi prepare() hoặc create()\n   3. Gọi start(), pause(), stop()\n   4. Gọi release() khi xong"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="📌 3. Permissions (Quyền truy cập)"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"
+            android:textColor="#000000"
+            android:text="Trong xml ta sử dụng thư viện của PreviewView để hiển thị ảnh từ camera và một nút để chụp hình ảnh"/>
+
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="400dp"
+            app:srcCompat="@drawable/cm3"/>
 
         <TextView
-            android:text="• RECORD_AUDIO – thu âm\n• WRITE_EXTERNAL_STORAGE – lưu file (Android &lt; 10)\n• Từ Android 6.0 cần xin runtime permissions"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="📌 4. File Paths &amp; Output"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"
+            android:textColor="#000000"
+            android:text="Trong java:"/>
+
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/cm4"/>
 
         <TextView
-            android:text="• Sử dụng getExternalFilesDir()\n• Định dạng phổ biến: .3gp, .wav, .mp4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="📌 5. Xử lý sự kiện và lỗi"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"
+            android:textColor="#000000"
+            android:text="Ta tạo một ExecutorService với một luồn đơn nhằm xử lý các tác vụ nền như lưu ảnh, truy cập camera mà không chặn UI"/>
+
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/cm5"/>
 
         <TextView
-            android:text="• MediaPlayer: dùng setOnCompletionListener()\n• Bắt lỗi: IOException, IllegalStateException"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="📌 6. Lifecycle Handling (Quản lý vòng đời)"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"
+            android:textColor="#000000"
+            android:text="Kiểm tra quyền truy cập camera đã có chưa, nếu chưa thì yêu cầu quyền từ người dùng và nếu có quyền thì mở camera"/>
+
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="300dp"
+            app:srcCompat="@drawable/cm6"/>
 
         <TextView
-            android:text="• Gọi release() trong onPause() hoặc onDestroyView()\n• Tránh rò rỉ bộ nhớ và crash"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:text="- Khởi tạo đối tượng cameraProviderFuture để lấy camera provider một cách bất đồng bộ\n
+- Khi đối tượng đã sẵn sàng thì thực hiện try catch để bắt lỗi sự kiện và cameraProvider là nơi quản lý camera và liên kết lifecycle\n
+- Ta tạo đối tượng preview để hiển thị hình ảnh camera ra màn hình và dùng phương thức setSurfaceProvider để gắn cho phần PreviewView mà ta đã án xạ là viewFinder\n
+- Tiếp theo tạo đối tượng imageCapture giúp chụp ảnh tĩnh và ta có CAPTURE_MODE_MINIMIZE_LATENCY để chụp nhanh hơn, đánh đổi là chất lượng hình ảnh giảm một chút\n
+- Tạo đối tượng cameraSelector để hiển thị camera sau và ta có LENS_FACING_BACK (hiển thị camera sau)\n-
+- Giải phóng các binding cũ (nếu có) bằng phương thức unbindAll() để tránh lỗi khi gọi lại startCamera()
+"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            app:srcCompat="@drawable/cm7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:text="- Tiếp theo tới phần xử lý sự kiện nút bấm chụp hình\n
+- Kiểm tra nếu imageCapture chưa được khởi tajo thì thoát khỏi activity đó\n
+- Tạo tên file theo thời gian thực và đuổi file là jpg. Ví dụ như IMG_20250608_143022.jpg\n
+- Tạo photoFile và lưu ảnh trong thư mục /storage/emulated/0/Android/data/\n
+- Tạo outputOptions để chỉ định nơi lưu file ảnh sau khi chụp\n
+- Gọi hàm takePicture sẽ chụp ảnh và lưu vào file photoFile trong đó outputOptions là nơi lưu ảnh, cameraExecutor là luồng thực hiện, OnImageSavedCallback là xử lý kết quả đó\n\n
+
+- Sau đó ta cho các hàm callback để cho hiển thị đường dẫn lưu hình
+"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/cm8"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:text="Một hàm để kiểm tra đã cấp quyền truy cập camera."/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giao tiếp Camera"
+            android:id="@+id/btn_communicate"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:text="Camera API"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_cameraapi"/>
+
     </LinearLayout>
 </ScrollView>
