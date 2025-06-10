@@ -2,5 +2,97 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="I. Khái niệm Networking trên thiết bị di động"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="- Networking trên thiết bị di động liên quan đến việc sử dụng các kỹ thuật và giao thức để truyền tải dữ liệu giữa ứng dụng và các dịch vụ từ xa thông qua Internet"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic"
+        android:textSize="16sp"
+        android:text="* Các dạng kết nối:"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="+	Wi-Fi: Kết nối không dây tốc độ cao, phổ biến trong các khu vực có truy cập mạng cố định. Sử dụng sóng vô tuyến để truyền dữ liệu giữa thiết bị và router mạng. Nó phổ biến ở nhà, văn phòng, quán cà phê, sân bay,… Chủ yếu dựa vào mạng cáp quang hoặc DSL để cung cấp internet. Tốc độ và phạm vi phủ sóng phụ thuộc vào chuẩn Wi-Fi (Wi-Fi 5, Wi-Fi 6, Wi-Fi 6E, Wi-Fi 7). Wi-Fi có thể bị nhiễu bởi vật cản hoặc các thiết bị khác hoạt động trên cùng băng tần."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="+	LTE, 4G, 5G: Kết nối di động tốc độ cao, phụ thuộc vào dịch vụ của nhà mạng và phạm vi phủ sóng."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="+	Bluetooth: Kết nối không dây tầm ngắn, thường dưới 10 mét, sử dụng sóng vô tuyến ở băng tần 2.4GHz.
+         Nó phổ biến trong việc kết nối tai nghe, loa, chuột, bàn phím, truyền dữ liệu giữa điện thoại và máy tính,…
+         Bluetooth có nhiều phiên bản, từ 4.0 đến 5.3, với cải tiến về tốc độ, khoảng cách, tiết kiệm năng lượng.
+         Không phù hợp cho truyền dữ liệu dung lượng lớn như video HD."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic"
+        android:textSize="16sp"
+        android:text="* Các giao thức phổ biến:"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="+	HTTP/HTTPS: Giao thức truyền tải siêu văn bản, được sử dụng rộng rãi để truy cập web và API RESTful."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="+	WebSocket: Giao thức cung cấp kênh giao tiếp hai chiều toàn thời gian giữa client và server, hữu ích cho các ứng dụng thời gian thực."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="+	MQTT: Giao thức nhắn tin nhẹ, thường được sử dụng trong IoT. Được thiết kế để hoạt động trong môi trường băng thông thấp, thiết bị tiết kiệm năng lượng và mạng không ổn định."/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic"
+        android:textSize="16sp"
+        android:text="VÍ DỤ:Một hệ thống nhà thông minh dùng MQTT để các cảm biến nhiệt độ, độ ẩm gửi dữ liệu đến trung tâm xử lý mà không cần từng thiết bị phải hỏi server. "/>
+    </LinearLayout>
+</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
