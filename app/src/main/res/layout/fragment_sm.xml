@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_strict_mode_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chế độ nghiêm ngặt (Strict Mode) trong Android là một công cụ giúp phát hiện các hành vi không đúng trên ứng dụng của bạn, đặc biệt là những hành vi có thể gây ra hiệu năng kém hoặc lỗi khi ứng dụng chạy.\n\nĐối với networking (mạng lưới), chế độ nghiêm ngặt sẽ giúp bạn phát hiện những lỗi như:\n\n- Thực hiện các thao tác mạng trên main thread:\nĐiều này có thể gây ra ứng dụng bị treo hoặc chậm trễ khi bạn thực hiện các thao tác mạng (như tải dữ liệu, gửi yêu cầu) trên luồng chính của ứng dụng.\n\n- Sử dụng các API mạng quá cũ hoặc không an toàn:\nChế độ nghiêm ngặt sẽ báo lỗi nếu bạn sử dụng những API mạng không được khuyến khích hoặc không an toàn.\n\n- Không đóng kết nối mạng sau khi sử dụng:\nViệc này có thể dẫn đến việc ứng dụng tiêu thụ nhiều tài nguyên và gây ra các vấn đề liên quan đến mạng.\n\nĐể sử dụng Strict Mode cho networking:\n\n1. Thêm Strict Mode vào dự án:\nThêm thư viện Strict Mode vào dự án của bạn bằng cách thêm vào file build.gradle.\n\n2. Kích hoạt Strict Mode:\nSử dụng các API của Strict Mode để kích hoạt kiểm tra cho các thao tác liên quan đến networking.\n\n3. Xử lý lỗi:\nKhi Strict Mode phát hiện các lỗi, bạn sẽ nhận được cảnh báo hoặc ngoại lệ. Bạn cần xử lý những lỗi này để đảm bảo ứng dụng của bạn chạy ổn định và không gây ra các vấn đề về hiệu năng hoặc bảo mật."
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp"
+        android:textColor="#000000" />
+</ScrollView>
