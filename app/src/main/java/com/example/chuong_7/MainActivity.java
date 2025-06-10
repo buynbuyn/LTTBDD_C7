@@ -42,9 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,
-                R.id.nav_na,
                 R.id.nav_kn,  // Nhóm menu KN
-                R.id.nav_sm,  // Nhóm menu SM
+                R.id.nav_sm,
+                R.id.nav_http,
+                R.id.nav_lt,// Nhóm menu SM
                 R.id.nav_camera,
                 R.id.nav_video,
                 R.id.nav_audio
